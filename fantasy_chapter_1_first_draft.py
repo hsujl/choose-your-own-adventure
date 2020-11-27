@@ -1,5 +1,8 @@
-import random
+import os
+import sys
 import time
+import random
+
 
 # Possible reponses
 response_yes = ['y', 'Y', 'ye','yes', 'ya', 'yea', 'yep', 'yup', 'Yes']
@@ -328,5 +331,19 @@ def matronSpider():
     time.sleep(3)
     print('(This terminal will self-destruct in ten seconds)')
     time.sleep(10)
+
+
+ def slowType(self,text,mu=0.055,sigma=0.07):
+    if text is not None:
+        for idx in text:
+            sys.stdout.write(idx)
+            sys.stdout.flush()
+            time.sleep(abs(random.gauss(mu,sigma)))
+     
+    
+    # fast option for testing, uncomment zero assignments below to have
+    # fast printing for a test mode so you don't have to wait
+    #mu = 0.0
+    #sigma = 0.0
 
 displayIntro()
