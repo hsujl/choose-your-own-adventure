@@ -4,6 +4,7 @@ import time
 import random
 
 
+
 # Possible reponses
 response_yes = ['y', 'Y', 'ye','yes', 'ya', 'yea', 'yep', 'yup', 'Yes']
 response_no = ['n', 'N', 'no', 'na', 'nah', 'No']
@@ -33,63 +34,71 @@ name = 'Traveler'
 def generate_fantasy_name():
     return random.choice(name_first) + random.choice(name_second)
 
+def slowType(t, mu=0.055, sigma=0.07):
+    for l in t:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(abs(random.gauss(mu, sigma)))
+    print('')
+
+
 def displayIntro():
-    print('The chilling wind bites but the midday sun is shining strong and '
+    slowType('The chilling wind bites but the midday sun is shining strong and '
           'reinvigorates our adventurer...')
     time.sleep(5)
-    print('\nIt is the day four on the seven-day trek to Mount Emcae')
+    slowType('\nIt is the day four on the seven-day trek to Mount Emcae')
     time.sleep(2.5)
-    print('\nWith every step, your joints ache - the metronomic click in '
+    slowType('\nWith every step, your joints ache - the metronomic click in '
           'your left knee mere seconds before the tin cup and heirloom '
           'compass clang in your satchel')
     time.sleep(5)
-    print('\nYou try not to remind yourself that the easiest part of the '
+    slowType('\nYou try not to remind yourself that the easiest part of the '
           'journey is only just ending and the remaining days will demand '
           'what willpower you have left... still you muster your strength '
           'and carry on')
     time.sleep(5)
-    print('\nThe tip of Mount Emcae disappears in the far horizon as '
+    slowType('\nThe tip of Mount Emcae disappears in the far horizon as '
           'the roofs of the tall trees begin to shroud vision of your '
           'destination')
     time.sleep(5)
-    print('\nRays of sunlight sprinkle through the gaps of the branches and '
+    slowType('\nRays of sunlight sprinkle through the gaps of the branches and '
           'leaves but are soon shielded completely')
     time.sleep(3)
-    print('\nA loud scream splits through the silence of the whistling branches, '
+    slowType('\nA loud scream splits through the silence of the whistling branches, '
           '"HEEEELP!"')
     choice_1()
 
 def choice_1():
-    print('\nDo you run toward the cries for help?\n[yes | no]\n')
+    slowType('\nDo you run toward the cries for help?\n[yes | no]\n')
 
     response_1 = input('>>> ')
 
     if response_1 in response_yes:
-        print('You run toward the howling...')
+        slowType('You run toward the howling...')
         time.sleep(2)
-        print('\nAs you approach the scene, you begin to hear monstrous hissing '
+        slowType('\nAs you approach the scene, you begin to hear monstrous hissing '
               'woven between the breaks in the loud cries')
         time.sleep(4)
-        print('\nTwo adult forest spiders circle a shadowy figure')
+        slowType('\nTwo adult forest spiders circle a shadowy figure')
         time.sleep(4)
-        print('\nA tingling wave stampedes up your arm as the hairs shoot up')
-        print('(Spiders don\'t get this big back home...)')
+        slowType('\nA tingling wave stampedes up your arm as the hairs shoot up')
+        slowType('(Spiders don\'t get this big back home...)')
         time.sleep(4)
         choice_2()
     elif response_1 in response_no:
-        print('You run away!')
+        slowType('You run away!')
         theCoward()
     else:
         print(invalid_response)
         choice_1()
 
 def choice_2():
-    print('\nAre you sure you want to help the stranger?\n[yes | no]\n')
+    slowType('\nAre you sure you want to help the stranger?\n[yes | no]\n')
 
     response_2 = input('>>> ')
 
     if response_2 in response_yes:
-        print('You take out your trusty slingshot, place an acorn in its sling, and '
+        slowType('You take out your trusty slingshot, place an acorn in its sling, and '
               'let loose...')
         time.sleep(4)
         acornCheck()
@@ -331,19 +340,5 @@ def matronSpider():
     time.sleep(3)
     print('(This terminal will self-destruct in ten seconds)')
     time.sleep(10)
-
-
- def slowType(self,text,mu=0.055,sigma=0.07):
-    if text is not None:
-        for idx in text:
-            sys.stdout.write(idx)
-            sys.stdout.flush()
-            time.sleep(abs(random.gauss(mu,sigma)))
-     
-    
-    # fast option for testing, uncomment zero assignments below to have
-    # fast printing for a test mode so you don't have to wait
-    #mu = 0.0
-    #sigma = 0.0
 
 displayIntro()
