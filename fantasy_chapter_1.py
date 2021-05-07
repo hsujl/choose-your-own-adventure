@@ -112,7 +112,7 @@ def acornCheck():
         print('\nLuck is on your side but you still manage to be slashed by '
             'spider\'s iron-like barbed hairy legs')
         print('\nYou take 1 damage')
-        print('Your [HP]: ' + str(playerHP-1))
+        print('Your [HP]:', str(playerHP-1))
 
         theMajismith()
 
@@ -174,7 +174,7 @@ def theMajismith():
 
         else:
            counter += 1
-           print('You have ' + str(3-counter) + ' attempts left!')
+           print('You have', str(3-counter), 'attempts left!')
 
     print('The lock begins to shake vigorously...')
     print('It begins turning molten red as the bag begins smoking until it is turned into ash')
@@ -213,35 +213,35 @@ def chooseWeapon():
     if weapon in response_a:
         weapon = 'sword'
         playerClass = 'warrior'
-        print('You have chosen the sword, brave ' + playerClass + '.')
+        print('You have chosen the sword, brave', playerClass + '.')
         weaponOrigins()
     elif weapon in response_b:
         weapon = 'dagger'
         playerClass = 'rogue'
-        print('You have chosen the dagger, cunning ' + playerClass + '.')
+        print('You have chosen the dagger, cunning', playerClass + '.')
         weaponOrigins()
     elif weapon in response_c:
         weapon = 'staff'
         playerClass = 'mage'
-        print('You have chosen the staff, clever ' + playerClass + '.')
+        print('You have chosen the staff, clever', playerClass + '.')
         weaponOrigins()
     else:
         print(invalid_response)
         chooseWeapon()
 
 def weaponOrigins():
-    print('\n[Magismith]: "A most excellent selection, traveler. Your new ' + weapon + ' will surely '
-        ' protect you against any more spiderlings you should come across.')
-    print('\nThe ' + weapon + ' begins to rattle in your hand')
-    print('\n[Magismith]: "And it likes you too"')
-    print('[Magismith]: "Much more than your stick and sling, no doubt"')
+    print('\n[Magismith]: "A most excellent selection, traveler. Your new', weapon, 'will surely '
+            'protect you against any more spiderlings you should come across.')
+    print('\nThe', weapon,'begins to rattle in your hand')
+    print('\n[Magismith]: "And it likes you too..."')
+    print('[Magismith]: "Much more than your stick and sling, no doubt."')
     print('(What\'s she got against my slingshot?)')
     print('\nA small humming begins in your ear')
     time.sleep(4)
     print('\nThe deafining hum grows louder until it is near unbearable '
           'and you drop to your knees')
     time.sleep(3)
-    print('(Is this ' + weapon + ' cursed?!)')
+    print('(Is this', weapon, 'cursed?!)')
     time.sleep(2)
     print('\nAs the loud humming subsides, you hear the Majismith ask:')
     print('[Voice]: "What is your name?"')
@@ -253,13 +253,12 @@ def weaponOrigins():
     weapon_name = generate_weapon_name()
 
 
-    print('\n"Hello ' + name.capitalize() + '. I am '
-          + weapon_name + '."')
+    print('\n"Hello', name.capitalize() + '. I am', weapon_name + '."')
     time.sleep(2)
     print('\nYou look up but the Majismith is nowhere to be seen')
     print('\n"Where did she go?", you wonder.')
     print('You realise you are not speaking at all - the thought of your '
-          'newly-acquired ' + weapon + ' washes over you as you feel energy '
+          'newly-acquired', weapon, 'washes over you as you feel energy '
           'coursing from your fingertips to your chest')
     matronSpider()
 
@@ -277,19 +276,19 @@ def enemyEncounter():
 
     while playerHP >= 1 and enemyHP >= 1:
         enemyHit = random.randint(2,3)
-        print('\nThe ' + enemy + ' does ' + str(enemyHit) + ' damage to you.')
+        print('\nThe', enemy, 'does', str(enemyHit), 'damage to you.')
         playerHP = playerHP - enemyHit
-        print('[' + name.capitalize() + ' HP]: ' + str(playerHP))
+        print('[' + name.capitalize(), 'HP]: ', str(playerHP))
         time.sleep(1.5)
         if playerHP >= 1:
             playerHit = random.randint(1,2) * hitMultiplier
-            print('\nYou do ' + str(playerHit) + ' damage to the ' + enemy + '.')
+            print('\nYou do', str(playerHit), 'damage to the', enemy + '.')
             enemyHP = enemyHP - playerHit
-            print('[' + enemy.capitalize() + ' HP]: ' + str(enemyHP))
+            print('[' + enemy.capitalize(), 'HP]:', str(enemyHP))
             time.sleep(1.5)
 
     if enemyHP <= 0:
-        print('\nThe ' + enemy + ' has been slain!')
+        print('\nThe', enemy, 'has been slain!')
     elif playerHP <= 0:
         print('\nYou did not survive...')
         print('\nPlay again?\n[yes | no]')
@@ -306,11 +305,11 @@ def choice_fight():
 
     if subresponse in response_yes:
         if unarmed == 0:
-            print('\nYou raise your ' + weapon)
+            print('\nYou raise your', weapon)
         else:
             print('\nYou raise your fists')
     elif subresponse in response_no:
-        print('\nYou cannot escape the ' + enemy)
+        print('\nYou cannot escape the', enemy)
     else:
         print(invalid_response)
         choice_fight()
@@ -349,11 +348,11 @@ def matronSpider():
         elif weapon == 'wand':
             print('\nA gravitational pull around you uproots surrounding trees')
 
-        print(weapon_name + ' has awoken!')
+        print(weapon_name, 'has awoken!')
         time.sleep(3)
 
-    print('\n\nCongratulations! You have reached the end of Chapter 1: '
-          + name.capitalize() + '\'s Beginning')
+    print('\n\nCongratulations! You have reached the end of Chapter 1:',
+           name.capitalize() + '\'s Beginning')
     print('Thanks for playing!')
     time.sleep(3)
     print('(This terminal will self-destruct in ten seconds)')
