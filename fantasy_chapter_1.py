@@ -231,7 +231,7 @@ def chooseWeapon():
 
 def weaponOrigins():
     print('\n[Magismith]: "A most excellent selection, traveler. Your new ' + weapon + ' will surely '
-        ' protect you against any spiderlings you may come across. ')
+        ' protect you against any more spiderlings you should come across.')
     print('\nThe ' + weapon + ' begins to rattle in your hand')
     print('\n[Magismith]: "And it likes you too"')
     print('[Magismith]: "Much more than your stick and sling, no doubt"')
