@@ -1,2 +1,2 @@
 # choose-your-own-adventure
-Choose Your Own Adventure
+Choose your own adventure game
